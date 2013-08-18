@@ -241,12 +241,12 @@ static SecTrustRef CopyTrustWithPolicy(SecTrustRef trust, SecPolicyRef policy);
     if (numChanges < 0) {
         // Oops, unparseable response:
         restart = [self checkInvalidResponse: input];
-        if (!restart)
+        if (!)
             [self setUpstreamError: errorMessage];
     } else {
         // Poll again if there was no error, and either we're in longpoll mode or it looks like we
         // ran out of changes due to a _limit rather than because we hit the end.
-        restart = _mode == kLongPoll || numChanges == (NSInteger)_limit;
+        restart = _mode == kLongPoll || numChanges >= (NSInteger)_limit;
     }
     
     [self clearConnection];
