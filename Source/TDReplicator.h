@@ -29,6 +29,7 @@ extern NSString* TDReplicatorStoppedNotification;
     BOOL _continuous;
     NSString* _filterName;
     NSDictionary* _filterParameters;
+    NSArray* _docIDs;
     NSString* _lastSequence;
     BOOL _lastSequenceChanged;
     NSDictionary* _remoteCheckpoint;
@@ -63,6 +64,7 @@ extern NSString* TDReplicatorStoppedNotification;
 @property (readonly) BOOL continuous;
 @property (copy) NSString* filterName;
 @property (copy) NSDictionary* filterParameters;
+@property (copy) NSArray *docIDs;
 @property (copy) NSDictionary* options;
 
 /** Optional dictionary of headers to be added to all requests to remote servers. */
@@ -109,5 +111,9 @@ extern NSString* TDReplicatorStoppedNotification;
 
 /** JSON-compatible array of status info about active remote HTTP requests. */
 @property (readonly) NSArray* activeRequestsStatus;
+
+/** Timeout interval for HTTP requests sent by this replicator.
+    (Derived from options key "connection_timeout", in milliseconds.) */
+@property (readonly) NSTimeInterval requestTimeout;
 
 @end
