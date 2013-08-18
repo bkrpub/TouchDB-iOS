@@ -221,7 +221,6 @@
 		27A720A2152B959100C0A0E8 /* TD_Attachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A7209F152B959100C0A0E8 /* TD_Attachment.m */; };
 		27A82E3614A1145000C0B850 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A82E3414A1145000C0B850 /* FMDatabaseAdditions.h */; };
 		27A82E3814A1145000C0B850 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A82E3514A1145000C0B850 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		27A82E3914A1145000C0B850 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A82E3514A1145000C0B850 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		27AA409D14AA86AE00E2A5FF /* TD_Database+Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA409A14AA86AD00E2A5FF /* TD_Database+Insertion.m */; };
 		27AA409E14AA86AE00E2A5FF /* TD_Database+Insertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA409A14AA86AD00E2A5FF /* TD_Database+Insertion.m */; };
 		27AA40A314AA8A6600E2A5FF /* TD_Database+Replication.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AA40A014AA8A6600E2A5FF /* TD_Database+Replication.m */; };
@@ -252,8 +251,6 @@
 		27B0B7D71492B8A200A817AD /* TDPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B3E3D148D7F0000E0A926 /* TDPusher.m */; };
 		27B0B7D81492B8A200A817AD /* TDChangeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B0B791149290AB00A817AD /* TDChangeTracker.m */; };
 		27B0B7DB1492B8A200A817AD /* TDBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B0B79D1492932700A817AD /* TDBase64.m */; };
-		27B0B7DC1492B8B200A817AD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F0747011CD51A200E9A2AB /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		27B0B7DD1492B8B200A817AD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F0747211CD51A200E9A2AB /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		27B0B7DE1492B8C100A817AD /* ExceptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F0751711CDC80A00E9A2AB /* ExceptionUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		27B0B7DF1492B8C100A817AD /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F0751211CDC7F900E9A2AB /* Logging.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		27B0B7E01492B8C100A817AD /* CollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F0749C11CD5B4F00E9A2AB /* CollectionUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -2189,13 +2186,10 @@
 				27F128B3156AC1CA008465C2 /* TDOAuth1Authorizer.m in Sources */,
 				270F5707156AE0BF000FEB8F /* TDAuthorizer.m in Sources */,
 				27ED9AA4163B01E2000C844A /* TDSocketChangeTracker.m in Sources */,
-				27B0B7DC1492B8B200A817AD /* FMDatabase.m in Sources */,
-				27B0B7DD1492B8B200A817AD /* FMResultSet.m in Sources */,
 				27B0B7DE1492B8C100A817AD /* ExceptionUtils.m in Sources */,
 				27B0B7DF1492B8C100A817AD /* Logging.m in Sources */,
 				27B0B7E01492B8C100A817AD /* CollectionUtils.m in Sources */,
 				27B0B7E11492B8C100A817AD /* Test.m in Sources */,
-				27A82E3914A1145000C0B850 /* FMDatabaseAdditions.m in Sources */,
 				279CE3BA14D4A886009F3FA6 /* MYBlockUtils.m in Sources */,
 				27DB90D914DB249700FC7118 /* GTMNSData+zlib.m in Sources */,
 				27D90B1915601C350000735E /* MYErrorUtils.m in Sources */,
@@ -2479,6 +2473,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_FILE = "$(PRODUCT_NAME)_vers.c";
 			};
@@ -2506,6 +2501,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_FILE = "$(PRODUCT_NAME)_vers.c";
 			};
