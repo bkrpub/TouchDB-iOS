@@ -1316,8 +1316,6 @@
 				27DB90DC14DB250500FC7118 /* libz.dylib */,
 				27DB90DE14DB4B0100FC7118 /* libz.dylib */,
 				27B0B7F61492BC7A00A817AD /* Foundation.framework */,
-				275315F714ACF2500065964D /* CoreServices.framework */,
-				275315F414ACF1CC0065964D /* Security.framework */,
 				DA147C3A14BCAC780052DA4D /* MobileCoreServices.framework */,
 				DA147C3B14BCAC780052DA4D /* Security.framework */,
 				275315F714ACF2500065964D /* CoreServices.framework */,
@@ -1623,7 +1621,7 @@
 			name = TouchDBTests;
 			productName = ToyCouchTests;
 			productReference = 270B3DFB1489359000E0A926 /* TouchDBTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		270FE0C714C5008C005FF647 /* TouchServ */ = {
 			isa = PBXNativeTarget;
@@ -1714,7 +1712,7 @@
 			name = TouchDBiOSTests;
 			productName = TouchDBiOSTests;
 			productReference = 27B0B7B61492B83B00A817AD /* TouchDBiOSTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		27B0B7E61492BB6B00A817AD /* iOS Framework */ = {
 			isa = PBXNativeTarget;
@@ -1833,6 +1831,7 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0720;
 				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "TouchDB" */;
