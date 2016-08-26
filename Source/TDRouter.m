@@ -40,6 +40,8 @@ extern double TouchDBVersionNumber; // Defined in Xcode-generated TouchDB_vers.c
 
 @interface TDRouter (Handlers)
 - (TDStatus) do_GETRoot;
+- (TDStatus) do_PUT: (TD_Database*)db;
+
 @end
 
 
@@ -406,7 +408,30 @@ static NSArray* splitPath( NSURL* url ) {
     IMP fn = objc_msg_lookup(self, sel);
     return (TDStatus) fn(self, sel, _db, docID, attachmentName);
 #else
-    return (TDStatus) objc_msgSend(self, sel, _db, docID, attachmentName);
+    // crashes on 64bit ARC
+    // return (TDStatus) objc_msgSend(self, sel, _db, docID, attachmentName);
+
+    TDStatus (*prototypedMsgSend0)(id, SEL) = (TDStatus (*)(id, SEL)) objc_msgSend;
+    TDStatus (*prototypedMsgSend1)(id, SEL, id) = (TDStatus (*)(id, SEL, id)) objc_msgSend;
+    TDStatus (*prototypedMsgSend2)(id, SEL, id, id) = (TDStatus (*)(id, SEL, id, id)) objc_msgSend;
+    TDStatus (*prototypedMsgSend3)(id, SEL, id, id, id) = (TDStatus (*)(id, SEL, id, id, id)) objc_msgSend;
+    
+    NSInteger numArgs = [NSStringFromSelector(sel) componentsSeparatedByString: @":"].count - 1;
+    
+    switch (numArgs) {
+        case 0:
+            return (TDStatus) prototypedMsgSend0(self, sel);
+        case 1:
+            return (TDStatus) prototypedMsgSend1(self, sel, _db);
+        case 2:
+            return (TDStatus) prototypedMsgSend2(self, sel, _db, docID);
+        case 3:
+            return (TDStatus) prototypedMsgSend3(self, sel, _db, docID, attachmentName);
+        default:
+            NSLog(@"unexpected number of arguments (%ld) in TDRouter", (long)numArgs);
+            exit(1);
+    }
+    
 #endif
 }
 
