@@ -44,7 +44,7 @@ fi
 
 
 #SDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\{3\}$')
-SDK_VERSION=$(echo ${SDK_NAME} | grep -e -o '[.0-9]+$')
+SDK_VERSION=$(echo ${SDK_NAME} | grep -o -e '[.0-9]*$')
 
 # Next, work out if we're in SIM or DEVICE
 
